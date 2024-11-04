@@ -4,3 +4,5 @@ transformers
 tensorflow
 tf-keras
 langchain
+langchain-community
+langchain-openai
