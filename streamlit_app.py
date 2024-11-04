@@ -8,8 +8,8 @@ st.title("Trip Feedback")
 prompt = st.text_input("Share with us your experience of the latest trip.", "")
 
 ### Load your API Key
-os.environ["OPENAI_API_KEY"] = st.secrets["MyOpenAIKey"]
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+my_secret_key = st. secrets ["MyOpenAIKey"]
+os.environ ["OPENAI_API_KEY"] = my_secret_key
 
 
 from langchain.llms import OpenAI
@@ -17,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ### Create the LLM API object
-llm = OpenAI(OPENAI_API_KEY=OPENAI_API_KEY)
+llm = OpenAI(openai_api_key=my_secret_key)
 # llm = ChatOpenAI(openai_api_key=openai_api_key, model="gpt-4")
 
 
@@ -66,10 +66,11 @@ compensation_chain = PromptTemplate.from_template(
 
     Your response should follow these guidelines:
     1. You will offer the traveler sympathies 
-    2. If the airline is at fault, you will inform the user that customer service will contact them soon to resolve the issue or provide compensation
-    3. If the airline is not at fault, you will explain that the airline is not liable in such situations
-    4. Do not respond with any reasoning. Just respond professionally as a travel chat agent.
-    5. Address the customer directly
+    2. If the airline is at fault for a negative experience, you will inform the user that customer service will contact them soon to resolve the issue or provide compensation
+    3. If the airline is not at fault for a negative experience, you will explain that the airline is not liable in such situations
+    4. If the user's experience is positive, thank them for their feedback and for choosing to fly with the airline. 
+    5. Do not respond with any reasoning. Just respond professionally as a travel chat agent.
+    6. Address the customer directly
 
 Text:
 {text}
