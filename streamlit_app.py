@@ -92,7 +92,7 @@ from langchain_core.runnables import RunnableBranch
 branch = RunnableBranch(
     (lambda x: "negative" in x["airline_template"].lower(), flight_experience_chain),
     (lambda x: "positive" in x["airline_template"].lower(), flight_experience_chain),
-    negative_chain, positive_chain
+    negative_chain, positive_chain,
 )
 
 ### Put all the chains together
