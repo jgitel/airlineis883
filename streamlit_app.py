@@ -29,7 +29,7 @@ From the following text, determine whether customer had a negative experience on
 Do not respond with more than one word.
 
 Text:
-{feedback}
+{text}
 
 """
 
@@ -89,7 +89,7 @@ branch = RunnableBranch(
 )
 
 ### Put all the chains together
-full_chain = {"fault_type": fault_chain, "text": lambda x: x["feedback"]} | branch
+full_chain = {"fault_type": fault_chain, "text": lambda x: x["text"]} | branch
 
 
 
