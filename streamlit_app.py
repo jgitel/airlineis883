@@ -22,7 +22,7 @@ llm = OpenAI(openai_api_key=my_secret_key)
 # llm = ChatOpenAI(openai_api_key=openai_api_key, model="gpt-4")
 
 
-### Create a template to handle the case where the price is not mentioned.
+### Create a template to handle the case where the customer gives an unstructured review.
 airline_template = """You are an expert at customer service for an airline.
 From the following text, determine whether customer had a negative experience on their flight.
 
@@ -84,7 +84,7 @@ from langchain_core.runnables import RunnableBranch
 
 ### Routing/Branching chain
 branch = RunnableBranch(
-    (lambda x: "fault" in x["fault_type"].lower(), fault_chain),
+    (lambda x: "text" in x["fault_type"].lower(), fault_chain),
     compensation_chain,
 )
 
@@ -99,4 +99,4 @@ langchain.debug = False
 full_chain.invoke({"text": prompt})
 
 ### Display
-st.write(text)
+st.write(full_chain)
