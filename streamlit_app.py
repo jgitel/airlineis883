@@ -9,6 +9,7 @@ prompt = st.text_input("Share with us your experience of the latest trip.", "")
 
 ### Load your API Key
 os.environ["OPENAI_API_KEY"] = st.secrets["MyOpenAIKey"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 
 from langchain.llms import OpenAI
