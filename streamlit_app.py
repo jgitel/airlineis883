@@ -97,3 +97,5 @@ import langchain
 langchain.debug = False
 
 full_chain.invoke({"text": prompt})
+
+print(full_chain)
