@@ -96,4 +96,4 @@ full_chain = {"fault_type": fault_chain, "text": lambda x: x["request"]} | branc
 import langchain
 langchain.debug = False
 
-full_chain.invoke({"feedback": prompt})
+full_chain.invoke({"request": prompt})
