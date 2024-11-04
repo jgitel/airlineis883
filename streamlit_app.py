@@ -89,7 +89,7 @@ branch = RunnableBranch(
 )
 
 ### Put all the chains together
-full_chain = {"fault_type": fault_type_chain, "text": lambda x: x["feedback"]} | branch
+full_chain = {"fault_type": fault_chain, "text": lambda x: x["feedback"]} | branch
 
 
 
