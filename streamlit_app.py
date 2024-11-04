@@ -100,5 +100,5 @@ full_chain.invoke({"text": prompt})
 
 
 ### Invoke it and print
-answer = full_chain.run("7")
+answer = full_chain.run("text")
 print(answer)
