@@ -98,4 +98,7 @@ langchain.debug = False
 
 full_chain.invoke({"text": prompt})
 
-print(full_chain)
+
+### Invoke it and print
+answer = full_chain.run("7")
+print(answer)
