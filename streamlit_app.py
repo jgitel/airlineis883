@@ -5,7 +5,7 @@ import os
 
 st.title("Trip Feedback")
 
-prompt = PromptTemplate.st.text_input("Share with us your experience of the latest trip.", "")
+prompt = st.text_input("Share with us your experience of the latest trip.", "")
 
 ### Load your API Key
 my_secret_key = st. secrets ["MyOpenAIKey"]
@@ -13,6 +13,8 @@ os.environ ["OPENAI_API_KEY"] = my_secret_key
 
 from langchain.llms import OpenAI
 from langchain_core.output_parsers import StrOutputParser
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
 
 
 ### Create the LLM API object
