@@ -106,4 +106,4 @@ langchain.debug = False
 response = full_chain.invoke({"text": prompt})
 
 ### Display
-st.write(response)
+st.markdown(response)
