@@ -11,7 +11,6 @@ prompt = st.text_input("Share with us your experience of the latest trip.", "")
 my_secret_key = st. secrets ["MyOpenAIKey"]
 os.environ ["OPENAI_API_KEY"] = my_secret_key
 
-pip install langchain-community langchain-core
 from langchain.llms import OpenAI
 from langchain_core.output_parsers import StrOutputParser
 
