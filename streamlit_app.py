@@ -90,13 +90,12 @@ from langchain_core.runnables import RunnableBranch
 
 ### Routing/Branching chain
 branch = RunnableBranch(
-    (lambda x: "negative" in x["airline_template"].lower(), flight_experience_chain),
-    (lambda x: "positive" in x["airline_template"].lower(), flight_experience_chain),
-    negative_chain, positive_chain,
+    (lambda x: "negative" in x["airline_template"].lower(), negative_chain),
+    positive_chain,
 )
 
 ### Put all the chains together
-full_chain = {"airline_template": flight_experience_chain, "text": lambda x: x["negative"], "text": lambda x: x["positive"], "text": negative_chain, "text": positive_chain} | branch
+full_chain = {"airline_template": flight_experience_chain, "text": lambda x: x["text"]} | branch
 
 
 
