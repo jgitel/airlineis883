@@ -16,7 +16,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ### Create the LLM API object
-llm = OpenAI(openai_api_key=openai_api_key)
+llm = OpenAI(OPENAI_API_KEY=OPENAI_API_KEY)
 # llm = ChatOpenAI(openai_api_key=openai_api_key, model="gpt-4")
 
 
