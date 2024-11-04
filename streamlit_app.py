@@ -5,7 +5,7 @@ import os
 
 st.title("Trip Feedback")
 
-prompt = st.text_input("Share with us your experience of the latest trip.", "")
+prompt = PromptTemplate.st.text_input("Share with us your experience of the latest trip.", "")
 
 ### Load your API Key
 my_secret_key = st. secrets ["MyOpenAIKey"]
