@@ -29,7 +29,7 @@ From the following text, determine whether customer had a negative experience on
 Do not respond with more than one word.
 
 Text:
-{request}
+{text}
 
 """
 
@@ -96,4 +96,4 @@ full_chain = {"fault_type": fault_chain, "text": lambda x: x["request"]} | branc
 import langchain
 langchain.debug = False
 
-full_chain.invoke({"request": prompt})
+full_chain.invoke({"text": prompt})
